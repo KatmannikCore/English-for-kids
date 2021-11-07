@@ -1,0 +1,23 @@
+.block{
+    background:wheat;
+    margin: 0 auto;
+    width: 60%;
+    margin-bottom: 70px;
+}
+.wrapper{
+    display: flex;
+    flex-wrap:wrap;
+    align-items: center;
+}
+.wrapper div{
+    flex: 0 1 25%;
+    box-sizing: border-box;
+}
+.block img{
+    display: block;
+    margin: 0 auto;
+}
+.word p{
+    text-align: center;
+    font-size: 26px;
+}
