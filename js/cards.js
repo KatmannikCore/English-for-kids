@@ -1,6 +1,9 @@
 import { cards, topics, cardsCategories } from "./configs/cardsConfig.js";
-let blocks = document.querySelectorAll(".cardFront");
-function Temp(){
+let _words = document.querySelectorAll(".cardFront p");
+let _images = document.querySelectorAll("img");
+let _translationWords= document.querySelectorAll(".cardBack p");
+let _musics= document.querySelectorAll("audio");
+function SetEventsForMenu(){
     let menu = document.querySelectorAll(" li a ");
     for(let i = 0; i < menu.length; i++){
         menu[i].addEventListener('click', function(){
@@ -8,31 +11,38 @@ function Temp(){
         })
     }
 }
-Temp();
-function SetCart(cards){
-    let images = document.querySelectorAll("img");
-    for(let j = 0; j < images.length; j++){
-        images[j].src = cards[j].image;
-    }
-    let words = document.querySelectorAll(".cardFront");
-    for(let j = 0; j < words.length; j++){
-        words[j].innerHTML = cards[j].word;
-    }
-    let translationWords= document.querySelectorAll(".cardBack");
-    for(let j = 0; j < words.length; j++){
-        translationWords[j].innerHTML = cards[j].translation;
-    }
-    let musics= document.querySelectorAll("audio");
-    for(let i = 0; i < musics.length; i ++){
-        musics[i].src = cards[i].audioSrc;
-    }
-}
-
+SetEventsForMenu();
 document.querySelectorAll(".card").forEach(item => item.addEventListener('click', function(){
-    this.classList.toggle('applyflip');
-    //this.onmouseover = this.querySelector("audio").play();
-}))
-
-document.querySelectorAll(".card").forEach(item => item.addEventListener('mouseenter', function(event){
     item.querySelector("audio").play()
 }))
+document.querySelectorAll(".card").forEach(item => item.addEventListener('mouseenter', function(event){
+    this.classList.add('applyflip');
+    setTimeout(function() {
+        item.classList.remove('applyflip');
+      }, 1500);
+}, false))
+document.querySelector(".main-page").onclick = function(){
+    SetCarts()
+}
+function SetCarts(){
+
+    for(let i = 0; i < cardsCategories.length; i++){
+        let index = getRandomInt(8);
+        _images[i].src = cards[cardsCategories[i]][index].image;
+        _words[i].innerHTML = cards[cardsCategories[i]][index].word;
+        _translationWords[i].innerHTML = cards[cardsCategories[i]][index].translation;
+        _musics[i].src = cards[cardsCategories[i]][index].audioSrc;
+    } 
+}
+function SetCart(cards){
+    for(let i = 0; i < cardsCategories.length; i++){
+        _images[i].src = cards[i].image;
+        _words[i].innerHTML = cards[i].word;
+        _translationWords[i].innerHTML = cards[i].translation;
+        _musics[i].src = cards[i].audioSrc;
+    } 
+}
+SetCarts()
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+} 

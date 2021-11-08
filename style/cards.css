@@ -9,11 +9,8 @@
     display: flex;
     flex-wrap:wrap;
     align-items: center;
+	z-index: 0;
 }
-/* .wrapper div{
-    flex: 0 1 25%;
-    box-sizing: border-box;
-} */
 .block img{
     display: block;
     margin: 0 auto;
@@ -33,18 +30,18 @@
 
   
   .card {
-	perspective: 1000px;
+	/* perspective: 1000px;
 	-webkit-perspective: 1000px;
 	-moz-perspective: 1000px;
 	-o-perspective: 1000px;
-	-ms-perspective: 1000px;
+	-ms-perspective: 1000px; */
 	margin:80px 150px;
 	width:320px;
 	height:243px;
-	vertical-align:top;
 	display:block;
 	font-size:25px;
     font-weight:bold;
+
 }
 
 .card .content {
@@ -165,7 +162,7 @@
 }
 /* 
 .card .content .cardFront, .card.applyflip .content .cardBack {
-	/* IE Hack. Halfway through the card flip, set visibility. Keep other browsers visible throughout the card flip. */
+	
 	animation: stayvisible 0.5s both;
 	-webkit-animation: stayvisible 0.5s both;
 	-moz-animation: stayvisible 0.5s both;
@@ -175,7 +172,6 @@
 	visibility: visible;
 } */
 /* .card.applyflip .content .cardFront, .card .content .cardBack {
-	/* IE Hack. Halfway through the card flip, set visibility. Keep other browsers visible throughout the card flip. */
 	animation: stayvisible 0.5s both;
 	-webkit-animation: stayvisible 0.5s both;
 	-moz-animation: stayvisible 0.5s both;
