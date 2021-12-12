@@ -1,0 +1,27 @@
+
+.start-game{
+    border-radius:  15px;
+    width: 50%;
+    height: 60px;
+    background-color: chartreuse;
+    margin: 20px;
+    font-size: 25px;
+}
+.start{
+    display: flex;
+    justify-content: center;
+}
+
+.game{
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    background: chartreuse;
+    height: 100px;
+    width: 100px;
+}
+.reverse{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}

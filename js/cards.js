@@ -4,7 +4,7 @@ let _images = document.querySelectorAll("img");
 let _translationWords= document.querySelectorAll(".cardBack p");
 let _musics= document.querySelectorAll("audio");
 function SetEventsForMenu(){
-    let menu = document.querySelectorAll(" li a ");
+    let menu = document.querySelectorAll("li a");
     for(let i = 0; i < menu.length; i++){
         menu[i].addEventListener('click', function(){
             SetCart(cards[menu[i].innerHTML])
@@ -12,20 +12,20 @@ function SetEventsForMenu(){
     }
 }
 SetEventsForMenu();
-document.querySelectorAll(".card").forEach(item => item.addEventListener('click', function(){
-    item.querySelector("audio").play()
-}))
-document.querySelectorAll(".card").forEach(item => item.addEventListener('mouseenter', function(event){
+export function PlayMusic(){
+    this.querySelector("audio").play()
+}
+document.querySelectorAll(".card").forEach(item => item.addEventListener('click', PlayMusic))
+//Переварот карт
+export function FlipCart(){
     this.classList.add('applyflip');
-    setTimeout(function() {
-        item.classList.remove('applyflip');
-      }, 1500);
-}, false))
+    setTimeout(() => this.classList.remove('applyflip'), 1500);
+}
+document.querySelectorAll(".card").forEach(item => item.addEventListener('mouseenter', FlipCart, false))
 document.querySelector(".main-page").onclick = function(){
     SetCarts()
 }
 function SetCarts(){
-
     for(let i = 0; i < cardsCategories.length; i++){
         let index = getRandomInt(8);
         _images[i].src = cards[cardsCategories[i]][index].image;

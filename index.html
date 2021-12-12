@@ -7,11 +7,15 @@
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/cards.css">
     <link rel="stylesheet" href="style/menu.css">
-    <title>Main page</title>
+    <link rel="stylesheet" href="style/game.css">
+    <title>Document</title>
 </head>
 <body>
     <header>
-
+        <label class="switch">
+            <input type="checkbox">
+            <span class="slider round">train</span>
+          </label>
     </header>
     <div id="sidebar">
         <div class="toggle-btn" >
@@ -145,6 +149,16 @@
             </div>
         </div>
     </div>
+
+    <div class="start">
+        <button class="start-game" hidden> Start Game </button>
+    </div>
+    <div class="reverse">
+        <button class="game" hidden > 
+            <img src="assets/icons/repeat.svg" alt=""> 
+        </button>
+    </div>
+
     <footer>
 
     </footer>
@@ -153,5 +167,6 @@
     
     <script src="js/script.js"></script>
     <script type="module" src="js/cards.js"></script>
+    <script type="module" src="js/play-game-1.js"></script>
 </body>
 </html>
