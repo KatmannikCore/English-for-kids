@@ -4,7 +4,7 @@ let _images = document.querySelectorAll("img");
 let _translationWords= document.querySelectorAll(".cardBack p");
 let _musics= document.querySelectorAll("audio");
 function SetEventsForMenu(){
-    let menu = document.querySelectorAll("li a");
+    let menu = document.querySelectorAll("li:not(.statistics_label) a");
     for(let i = 0; i < menu.length; i++){
         menu[i].addEventListener('click', function(){
             SetCart(cards[menu[i].innerHTML])

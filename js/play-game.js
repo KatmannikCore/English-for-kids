@@ -69,6 +69,7 @@ function Clean(){
     document.querySelectorAll(".card").forEach(item => item.addEventListener('mouseenter', FlipCart));
     document.querySelectorAll(".card").forEach(item => item.addEventListener('click', PlayMusic));
     document.querySelectorAll(".cardStatic img").forEach(item => item.style.maxWidth =  '100%'); 
+    document.querySelectorAll(".card").forEach(item => item.style.opacity = "1");
     document.querySelector(".game").hidden = true ;
 }
 document.querySelector('.modal').addEventListener('click',()=>location.reload())
