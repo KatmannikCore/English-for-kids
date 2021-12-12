@@ -25,3 +25,25 @@
     justify-content: center;
     margin: 20px;
 }
+.stars{
+    display: flex;
+    flex-direction: row-reverse;
+}
+.modal{
+    position: absolute;
+    width: 40%;
+    height: 20%;
+    background-color: thistle;
+    top: 30%;
+    left: 30%;
+    padding: 40px;
+    text-align: center;
+    color: rebeccapurple;
+    border-radius: 20%;
+}
+.modal p{
+    position: absolute;
+    left: 92%;
+    top:8%;
+    cursor: pointer;
+}
